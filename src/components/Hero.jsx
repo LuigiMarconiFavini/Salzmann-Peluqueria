@@ -3,8 +3,17 @@ import { waLink } from '../config';
 
 function Hero() {
   return (
-    <section id="inicio" className="relative overflow-hidden -mt-20 pt-20 md:-mt-24 md:pt-24">
-      <video autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover">
+    <section
+      id="inicio"
+      className="relative w-full overflow-hidden -mt-20 pt-20 md:-mt-24 md:pt-24 min-h-[100svh] md:min-h-0 flex items-center"
+    >
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute inset-0 w-full h-full min-w-full min-h-full object-cover object-center"
+      >
         <source src="/videos/hero-bg.mp4" type="video/mp4" />
       </video>
 
@@ -37,7 +46,7 @@ function Hero() {
             <div className="mt-12 md:mt-16 flex flex-wrap gap-6 sm:gap-10 border-t border-white/20 pt-8">
               <div>
                 <p className="font-display text-2xl sm:text-3xl text-lilac-light">Belgrano 627</p>
-                <p className="text-base text-white/70 mt-1">Rosario, Santa Fe</p>
+                <p className="text-base text-white/70 mt-1">San Carlos, Santa Fe</p>
               </div>
               <div>
                 <p className="font-display text-2xl sm:text-3xl text-lilac-light">Mar a sáb</p>

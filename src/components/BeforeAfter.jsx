@@ -25,8 +25,20 @@ function BeforeAfter() {
       </h2>
 
       <div ref={containerRef} onMouseMove={handlePointerMove} onMouseUp={handlePointerUp} onMouseLeave={handlePointerUp} onTouchMove={(e) => updatePosition(e.touches[0].clientX)} className="relative aspect-[4/5] sm:aspect-[16/10] md:aspect-[21/9] rounded-3xl overflow-hidden select-none">
-        <div className="absolute inset-0 bg-gradient-to-br from-lilac-light/40 to-lilac/50" />
-        <div className="absolute inset-0 bg-gradient-to-br from-rose/60 to-rose overflow-hidden" style={{ clipPath: `inset(0 0 0 ${position}%)` }} />
+        <img
+            src="/antesdespues/antes.jpeg"
+            alt="Resultado después del servicio"
+            className="absolute inset-0 w-full h-full object-cover object-top"
+            draggable={false}
+          />
+          <div className="absolute inset-0 overflow-hidden" style={{ clipPath: `inset(0 0 0 ${position}%)` }}>
+            <img
+              src="/antesdespues/despues.jpg"
+              alt="Antes del servicio"
+              className="absolute inset-0 w-full h-full object-cover object-top"
+              draggable={false}
+            />
+          </div>
         <div className="absolute top-0 bottom-0 w-[2px] bg-white/80" style={{ left: `${position}%` }}>
           <button onMouseDown={handlePointerDown} onTouchStart={handlePointerDown} onTouchEnd={handlePointerUp} aria-label="Deslizar para comparar" className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-11 h-11 rounded-full bg-white shadow-lg flex items-center justify-center cursor-ew-resize">
             <MoveHorizontal size={18} className="text-ink" />
