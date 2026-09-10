@@ -48,7 +48,7 @@ function BeforeAfter() {
         <span className="absolute top-5 right-5 bg-ink/80 text-white text-xs font-medium tracking-wide px-3 py-1.5 rounded-full">Después</span>
       </div>
 
-      <p className="text-base text-muted mt-4">Deslizá para ver el resultado — se reemplaza por fotos reales del salón apenas las tengan.</p>
+      {/* <p className="text-base text-muted mt-4">Deslizá para ver el resultado.</p> */}
     </section>
   );
 }

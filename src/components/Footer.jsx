@@ -17,7 +17,7 @@ function Footer() {
       <div className="max-w-6xl mx-auto px-6 md:px-10 py-10 flex flex-col md:flex-row justify-between items-center gap-6 text-sm text-muted">
         <div>
           <p className="text-ink font-medium">Peluquería Salzmann</p>
-          <p>Belgrano 627 · Rosario, Santa Fe</p>
+          <p>Belgrano 627 · San Carlos, Santa Fe</p>
         </div>
 
         <div className="flex items-center gap-4">
