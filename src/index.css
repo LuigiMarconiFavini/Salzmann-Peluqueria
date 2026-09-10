@@ -1,0 +1,35 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Manrope:wght@400;500;600;700&display=swap');
+
+@theme {
+  --color-bg: #FBF6F9;
+  --color-ink: #2E1F35;
+  --color-lilac: #8A6BAE;
+  --color-lilac-light: #B79FD1;
+  --color-rose: #D98CA0;
+  --color-muted: #8B7C94;
+  --color-surface: #FFFFFF;
+
+  --font-display: 'Fraunces', serif;
+  --font-sans: 'Manrope', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+}
