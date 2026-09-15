@@ -7,6 +7,7 @@ import Testimonial from './components/Testimonial';
 import CtaFinal from './components/CtaFinal';
 import Footer from './components/Footer';
 import WhatsAppButton from './components/WhatsAppButton';
+import OurJourney from './components/OurJourney';
 
 function App() {
   return (
@@ -15,7 +16,8 @@ function App() {
       <main>
         <Hero />
         <Services />
-        <HowItWorks />
+        {/* <HowItWorks /> */}
+        <OurJourney />
         <BeforeAfter />
         <Testimonial />
         <CtaFinal />

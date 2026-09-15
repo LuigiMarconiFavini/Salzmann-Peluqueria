@@ -1,7 +1,7 @@
 import { MessageCircle, Mail } from 'lucide-react';
 import { waLink } from '../config';
 
-const CONTACT_EMAIL = 'ejemplo@gmail.com';
+const CONTACT_EMAIL = 'rominasalzmann5@gmail.com';
 const gmailComposeLink = `https://mail.google.com/mail/?view=cm&fs=1&to=${CONTACT_EMAIL}&su=${encodeURIComponent('Consulta desde la web')}`;
 
 const NAV_LINKS = [

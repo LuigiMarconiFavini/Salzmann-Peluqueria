@@ -3,18 +3,19 @@ import { waLink } from '../config';
 
 function CtaFinal() {
   return (
-    <section id="contacto" className="bg-gradient-to-br from-lilac to-rose">
+    <section id="contacto" className="bg-ink">
       <div className="max-w-6xl mx-auto px-6 md:px-10 py-28 text-center">
         <Reveal>
-          <p className="font-display italic text-xl text-white/90 mb-3">Hablemos</p>
+          <p className="mb-4 text-sm font-semibold uppercase tracking-[0.18em] text-rose">Reservá tu momento</p>
           <h2 className="text-4xl sm:text-5xl md:text-6xl text-white font-medium leading-tight">
-            ¿Te gustó lo que viste?
+            ¿Querés que pensemos
             <br />
-            Contanos <span className="italic">por WhatsApp.</span>
+            tu próximo <span className="italic text-lilac-light">cambio?</span>
           </h2>
+          <p className="mx-auto mt-5 max-w-md text-lg leading-relaxed text-white/70">Escribinos, contanos qué buscás y coordinamos tu turno.</p>
 
-          <a href={waLink('Hola! Me gustó la web de Salzmann y quiero consultar disponibilidad.')} target="_blank" rel="noopener noreferrer" className="inline-block mt-10 bg-white text-lilac px-8 py-4 rounded-full font-semibold text-lg hover:bg-bg hover:scale-[1.03] hover:shadow-xl hover:shadow-ink/20 transition-all duration-200">
-            Escribinos por WhatsApp
+          <a href={waLink('Hola! Quiero que pensemos mi próximo cambio y consultar disponibilidad.')} target="_blank" rel="noopener noreferrer" className="inline-block mt-10 bg-lilac px-8 py-4 text-lg font-semibold text-white transition-colors duration-200 hover:bg-lilac-light focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white">
+            Consultar por WhatsApp
           </a>
         </Reveal>
       </div>
