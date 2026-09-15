@@ -1,13 +1,14 @@
 import { MessageCircle, Mail } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { waLink } from '../config';
 
 const CONTACT_EMAIL = 'rominasalzmann5@gmail.com';
 const gmailComposeLink = `https://mail.google.com/mail/?view=cm&fs=1&to=${CONTACT_EMAIL}&su=${encodeURIComponent('Consulta desde la web')}`;
 
 const NAV_LINKS = [
-  { label: 'Servicios', href: '#servicios' },
-  { label: 'Trabajos', href: '#trabajos' },
-  { label: 'Contacto', href: '#contacto' },
+  { label: 'Servicios', href: '/servicios' },
+  { label: 'Trabajos', href: '/#trabajos' },
+  { label: 'Contacto', href: '/#contacto' },
 ];
 
 function InstagramIcon(props) {
@@ -26,16 +27,16 @@ function Footer() {
       <div className="w-full px-6 md:px-24 py-16">
         <div className="grid sm:grid-cols-2 md:grid-cols-[1.4fr_1fr_1fr] gap-12">
           <div>
-            <a href="#inicio" className="flex items-center gap-3 mb-4">
+            <Link to="/" className="flex items-center gap-3 mb-4">
               <div className="h-12 w-12 rounded-full overflow-hidden shrink-0">
                 <img src="/logo-salzmann.png" alt="Salzmann Peluquería" className="h-full w-full object-cover" />
               </div>
               <span className="font-display text-xl text-ink">
                 Salzmann<span className="text-rose">.</span>
               </span>
-            </a>
+            </Link>
             <p className="text-sm text-muted leading-relaxed max-w-xs">
-              Belgrano 627 · Rosario, Santa Fe
+              Belgrano 627 · San Carlos, Santa Fe
               <br />
               Martes a sábados, 15 a 21hs
             </p>
@@ -45,9 +46,9 @@ function Footer() {
             <p className="text-sm font-semibold uppercase tracking-widest text-rose mb-5">Secciones</p>
             <nav className="flex flex-col gap-3">
               {NAV_LINKS.map((link) => (
-                <a key={link.href} href={link.href} className="text-sm text-muted hover:text-lilac transition-colors w-fit">
+                <Link key={link.href} to={link.href} className="text-sm text-muted hover:text-lilac transition-colors w-fit">
                   {link.label}
-                </a>
+                </Link>
               ))}
             </nav>
           </div>

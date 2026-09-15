@@ -1,4 +1,5 @@
 import Reveal from './Reveal';
+import { Link } from 'react-router-dom';
 import { waLink } from '../config';
 
 function Hero() {
@@ -22,7 +23,7 @@ function Hero() {
       <div className="relative w-full px-6 md:px-24 pt-16 md:pt-24 pb-20">
         <Reveal>
           <div className="max-w-xl">
-            <p className="font-display italic text-lg sm:text-xl text-rose mb-4">Peluquería · Rosario</p>
+            <p className="font-display italic text-lg sm:text-xl text-rose mb-4">Peluquería Salzmann</p>
 
             <h1 className="text-4xl sm:text-5xl md:text-7xl leading-[1.1] md:leading-[1.02] text-white font-medium">
               El salón de tu barrio,
@@ -30,17 +31,17 @@ function Hero() {
               <span className="italic text-lilac-light">con oficio de grande.</span>
             </h1>
 
-            <p className="mt-6 md:mt-7 text-lg sm:text-xl text-white/85 max-w-md leading-relaxed">
-              Cortes, color, alisados y peinados en un salón donde te conocemos por tu nombre — no como una clienta más.
-            </p>
+            {/*<p className="mt-6 md:mt-7 text-lg sm:text-xl text-white/85 max-w-md leading-relaxed">
+              Todos los servicios 
+            </p>*/}
 
             <div className="mt-8 md:mt-9 flex flex-wrap gap-4">
               <a href={waLink('Hola! Vi la web y quiero reservar un turno.')} target="_blank" rel="noopener noreferrer" className="bg-lilac text-white px-6 py-3 rounded-full font-semibold text-base hover:bg-lilac-light hover:scale-[1.03] hover:shadow-lg hover:shadow-lilac/30 transition-all duration-200">
                 Reservá tu turno
               </a>
-              <a href="#trabajos" className="border-2 border-white/40 text-white px-6 py-3 rounded-full font-semibold text-base hover:border-white/70 hover:scale-[1.03] hover:shadow-md transition-all duration-200">
-                Ver trabajos
-              </a>
+              <Link to="/servicios" className="border-2 border-white/40 text-white px-6 py-3 rounded-full font-semibold text-base hover:border-white/70 hover:scale-[1.03] hover:shadow-md transition-all duration-200 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white">
+                Ver servicios
+              </Link>
             </div>
 
             <div className="mt-12 md:mt-16 flex flex-wrap gap-6 sm:gap-10 border-t border-white/20 pt-8">

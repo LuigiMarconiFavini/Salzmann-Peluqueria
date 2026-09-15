@@ -1,70 +1,9 @@
-import { useState } from 'react';
-import { Scissors, Palette, Wind, Droplets, ArrowRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import Reveal from './Reveal';
-import ServiceModal from './ServiceModal';
-
-const SERVICES = [
-  {
-    icon: Scissors,
-    title: 'Corte & Color',
-    description: 'Cortes a medida, tintura y reflejos, de raíz a puntas.',
-    gradient: 'from-lilac/25 to-rose/25',
-    duration: 'Duración aprox. 1h 30min – 2h 30min',
-    fullDescription: 'Un corte que se adapta a la forma de tu rostro y tu rutina diaria, combinado con color que resalta tu base natural. Trabajamos con productos profesionales que cuidan la fibra capilar en cada aplicación.',
-    steps: [
-      'Diagnóstico capilar y charla sobre lo que buscás',
-      'Corte a medida, ajustando forma y textura',
-      'Aplicación de color o reflejos con productos profesionales',
-      'Finalizado con hidratación y brillo',
-    ],
-  },
-  {
-    icon: Wind,
-    title: 'Peinados',
-    description: 'Para fiestas, casamientos y eventos. Prueba previa incluida.',
-    gradient: 'from-rose/25 to-lilac-light/30',
-    duration: 'Duración aprox. 45min – 1h 15min (prueba aparte)',
-    fullDescription: 'Para que llegues perfecta a cualquier evento. Armamos el peinado según tu look, con prueba previa incluida para que no haya sorpresas el día importante.',
-    steps: [
-      'Prueba previa para definir el estilo',
-      'Preparación y protección del cabello',
-      'Armado del peinado con técnicas de larga duración',
-      'Fijación final con productos profesionales',
-    ],
-  },
-  {
-    icon: Palette,
-    title: 'Alisados',
-    description: 'Tratamientos de alisado cuidando la fibra capilar.',
-    gradient: 'from-lilac-light/30 to-lilac/25',
-    duration: 'Duración aprox. 2h – 3h según largo y densidad',
-    fullDescription: 'Tratamientos de alisado libres de formol, pensados para dejar tu pelo liso y manejable sin resignar salud capilar. Ideal si buscás reducir el frizz y el tiempo de peinado diario.',
-    steps: [
-      'Diagnóstico capilar para elegir el tratamiento adecuado',
-      'Limpieza profunda previa',
-      'Aplicación del alisado y planchado técnico',
-      'Sellado y recomendaciones de cuidado en casa',
-    ],
-  },
-  {
-    icon: Droplets,
-    title: 'Tratamientos hidratantes',
-    description: 'Nutrición profunda para devolverle brillo y salud al pelo.',
-    gradient: 'from-lilac/20 to-rose/30',
-    duration: 'Duración aprox. 40min – 1h',
-    fullDescription: 'Nutrición profunda para devolverle brillo, suavidad y elasticidad a tu cabello. Recomendado para pelo teñido, dañado o que necesita un extra de cuidado.',
-    steps: [
-      'Diagnóstico del estado del cabello',
-      'Aplicación de tratamiento nutritivo según necesidad',
-      'Masaje capilar para potenciar la absorción',
-      'Sellado con calor o frío según el producto',
-    ],
-  },
-];
+import { SERVICES } from '../data/services';
 
 function Services() {
-  const [selected, setSelected] = useState(null);
-
   return (
     <section id="servicios" className="bg-lilac/6">
       <div className="max-w-6xl mx-auto px-6 md:px-10 py-16 md:py-24">
@@ -91,11 +30,11 @@ function Services() {
 
         <div className="grid sm:grid-cols-2 gap-5">
           {SERVICES.map((service, index) => {
-            const { icon: Icon, title, description, gradient } = service;
+            const { icon: Icon, title, description, image, id } = service;
             return (
               <Reveal key={title} delay={index * 100}>
-                <button onClick={() => setSelected(service)} className="w-full text-left bg-surface rounded-2xl border border-ink/8 h-full overflow-hidden flex flex-col sm:flex-row transition-all duration-300 ease-out hover:scale-[1.02] hover:shadow-lg hover:border-lilac/30">
-                  <div className={`w-full h-28 sm:w-[38%] sm:h-auto shrink-0 bg-gradient-to-br ${gradient} order-first`} />
+                <Link to={`/servicios#${id}`} className="w-full text-left bg-surface rounded-2xl border border-ink/8 h-full overflow-hidden flex flex-col sm:flex-row transition-all duration-300 ease-out hover:scale-[1.02] hover:shadow-lg hover:border-lilac/30 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-lilac">
+                  <img src={image} alt="" className="w-full h-28 sm:w-[38%] sm:h-auto shrink-0 object-cover order-first" />
 
                   <div className="flex-1 min-w-0 p-7 flex flex-col">
                     <div className="h-11 w-11 rounded-full bg-lilac/10 flex items-center justify-center">
@@ -108,14 +47,19 @@ function Services() {
                       <ArrowRight size={16} strokeWidth={2} />
                     </span>
                   </div>
-                </button>
+                </Link>
               </Reveal>
             );
           })}
         </div>
+        <Reveal>
+          <div className="mt-10 text-center">
+            <Link to="/servicios" className="inline-flex items-center gap-2 border border-lilac text-lilac px-6 py-3 rounded-full font-semibold hover:bg-lilac hover:text-white transition-colors focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-lilac">
+              Ver todos los servicios <ArrowRight size={17} />
+            </Link>
+          </div>
+        </Reveal>
       </div>
-
-      <ServiceModal service={selected} onClose={() => setSelected(null)} />
     </section>
   );
 }
