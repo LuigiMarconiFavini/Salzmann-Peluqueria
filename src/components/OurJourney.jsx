@@ -5,18 +5,30 @@ const STOPS = [
     year: '2013',
     title: 'Donde todo empezó',
     description:
-      'Salzmann Peluquería abrió sus puertas en su primer local, con una idea clara: brindar atención cercana, dedicación y un espacio pensado para que cada persona se sienta bien.',
+      'Me animé a dar un gran paso y decidí abrir mi propio espacio "Salzmann Peluquería", comenzando en un pequeño lugar dentro de mi casa. Allí transcurrieron unos años llenos de aprendizaje, trabajo y muchísimos momentos especiales.',
     image: '/recorrido/local-2013.jpg',
     alt: 'Primer local de Salzmann Peluquería',
   },
   {
-    year: '2024',
-    title: 'Un nuevo espacio para seguir creciendo',
+    year: '2018',
+    title: 'Gran Cambio',
     description:
-      'Con el paso del tiempo llegó una nueva etapa. Nos mudamos a un espacio que nos permitió seguir creciendo, manteniendo la misma esencia y el cuidado de siempre.',
-    image: '/recorrido/nuevo-local.jpg',
-    alt: 'Nuevo local de Salzmann Peluquería',
+      'Llegó otro gran cambio: decidí trasladar la peluquería a un local más céntrico, dando un nuevo paso en este camino que tanto amo.',
+    image: '/recorrido/2do.png',
+    image2: '/recorrido/3era.png',
+    alt: 'Primer local de Salzmann Peluquería',
   },
+  {
+  year: '2025',
+  title: 'Un nuevo espacio para seguir creciendo',
+  description: `Llegó el momento de comenzar una nueva etapa, en el espacio donde hoy nos encontramos.
+
+    Cada lugar fue parte de esta historia y cada etapa me permitió crecer un poquito más. ❤️
+
+      Hoy miro hacia atrás y agradezco profundamente todo el camino recorrido, pero sobre todo, a cada persona que confió y sigue confiando en mí.`,
+  image: '/recorrido/nuevo-local.jpg',
+  alt: 'Nuevo local de Salzmann Peluquería',
+}
 ];
 
 function JourneyStop({ stop, index }) {
@@ -31,13 +43,29 @@ function JourneyStop({ stop, index }) {
       />
 
       <Reveal className={`${imagePosition} md:row-start-1`}>
-        <figure className="overflow-hidden rounded-3xl bg-lilac/10 shadow-lg shadow-ink/10">
-          <img
-            src={stop.image}
-            alt={stop.alt}
-            className="aspect-[4/5] w-full object-cover transition-transform duration-700 hover:scale-105 motion-reduce:transition-none"
-          />
-        </figure>
+        <div className="relative mx-auto max-w-md pb-8 pr-6">
+
+          {/* Imagen principal */}
+          <figure className="relative z-10 overflow-hidden rounded-3xl bg-lilac/10 shadow-xl shadow-ink/10">
+            <img
+              src={stop.image}
+              alt={stop.alt}
+              className="aspect-[4/5] w-full object-cover transition-transform duration-700 hover:scale-105"
+            />
+          </figure>
+
+          {/* Segunda imagen */}
+          {stop.image2 && (
+            <figure className="absolute -bottom-2 -right-2 z-20 w-[48%] overflow-hidden rounded-2xl border-4 border-bg shadow-xl shadow-ink/15 rotate-3 transition-transform duration-500 hover:rotate-0 hover:scale-105 sm:-right-6">
+              <img
+                src={stop.image2}
+                alt=""
+                className="aspect-[4/5] w-full object-cover"
+              />
+            </figure>
+          )}
+
+        </div>
       </Reveal>
 
       <Reveal delay={120} className={`${textPosition} mt-7 md:row-start-1 md:mt-0`}>
