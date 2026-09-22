@@ -6,18 +6,31 @@ function Hero() {
   return (
     <section
       id="inicio"
-      className="relative w-full overflow-hidden -mt-20 pt-20 md:-mt-24 md:pt-24 min-h-[100svh] md:min-h-0 flex items-center"
+      className="relative w-full overflow-hidden -mt-20 pt-20 md:-mt-24 md:pt-24 min-h-[100svh] md:min-h-[85vh] flex items-center"
     >
+      {/* 1. Video VERTICAL para Celulares (se oculta de pantalla 'md' en adelante) */}
       <video
         autoPlay
         loop
         muted
         playsInline
-        className="absolute inset-0 w-full h-full min-w-full min-h-full object-cover object-center"
+        className="absolute inset-0 w-full h-full object-cover object-center md:hidden"
       >
         <source src="/videos/hero-bg.mp4" type="video/mp4" />
       </video>
 
+      {/* 2. Video HORIZONTAL para Computadoras (se muestra de pantalla 'md' en adelante) */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover object-center hidden md:block"
+      >
+        <source src="/videos/hero-bg1.mp4" type="video/mp4" />
+      </video>
+
+      {/* Capa de degradado sobre el video para mejorar la lectura del texto */}
       <div className="absolute inset-0 bg-gradient-to-b from-ink/80 via-ink/55 to-ink/75 md:bg-gradient-to-r md:from-ink/75 md:via-ink/35 md:to-transparent" />
 
       <div className="relative w-full px-6 md:px-24 pt-16 md:pt-24 pb-20">
