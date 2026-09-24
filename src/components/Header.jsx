@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 
 const NAV_LINKS = [
   { label: 'Servicios', href: '/servicios' },
-  { label: 'Trabajos', href: '/#trabajos' },
+  { label: 'Trabajos', href: '/trabajos' },
   { label: 'Contacto', href: '/#contacto' },
 ];
 
@@ -74,7 +74,7 @@ function Header() {
 
         <nav className="hidden md:flex items-center gap-10">
           {NAV_LINKS.map((link) => {
-            const isActive = location.pathname === '/servicios' ? link.href === '/servicios' : activeId === link.href;
+            const isActive = link.href.startsWith('/#') ? activeId === link.href : location.pathname === link.href;
             const underline = isActive ? 'after:scale-x-100' : 'after:scale-x-0 hover:after:scale-x-100';
             const linkColor = headerOverHero ? 'text-white' : 'text-lilac';
             return (

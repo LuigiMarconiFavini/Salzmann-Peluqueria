@@ -9,6 +9,7 @@ import Footer from './components/Footer';
 import WhatsAppButton from './components/WhatsAppButton';
 import OurJourney from './components/OurJourney';
 import ServicesPage from './components/ServicesPage';
+import TrabajosPage from './components/TrabajosPage';
 
 function ScrollToRoute() {
   const { pathname, hash } = useLocation();
@@ -46,6 +47,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/servicios" element={<ServicesPage />} />
+          <Route path="/trabajos" element={<TrabajosPage />} />
           <Route path="*" element={<HomePage />} />
         </Routes>
         <Footer />

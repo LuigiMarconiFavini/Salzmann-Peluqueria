@@ -2,43 +2,39 @@ import { useRef, useState, useEffect } from 'react';
 import { Quote, ChevronLeft, ChevronRight } from 'lucide-react';
 import Reveal from './Reveal';
 
-// TODO: reemplazar por reseñas reales de clientas antes de publicar.
+// Reseñas reales tomadas de Google Maps (Emiliano, Melii, Nancy, Vanina, Hugo, Lilia).
+// TODO: sumar las reseñas reales de Instagram cuando las tengas, y reemplazar las marcadas [inventada].
 const TESTIMONIALS = [
   {
-    quote: 'Salgo siempre feliz de acá. El trato, la calidez y el resultado son excelentes. Me encanta mi pelo desde que voy a Salzmann.',
-    name: 'Sofía G.',
+    quote: 'Muy buena atención y amabilidad de la peluquera. Realmente recomiendo venir a este lugar.',
+    name: 'Emiliano B.',
   },
+  {
+    quote: 'Estás en las mejores manos… una genial Romi. Recomiendo 100%, la mejor onda.',
+    name: 'Melii B.',
+  },
+  {
+    quote: 'Su atención y la pasión que le pone a mi cabello, manos y rostro es impagable. Salgo radiante de mi peluquería favorita, la recomiendo.',
+    name: 'Nancy E.',
+  },
+  {
+    quote: 'Limpieza, calidad, profesionalismo y valor.',
+    name: 'Lilia T.',
+  },
+  // [inventada] — reemplazar por reseña real cuando la tengas.
   {
     quote: 'Vine por un corte y me quedé como clienta fija. Acá te tratan como familia.',
     name: 'Clienta de Salzmann Peluquería',
   },
-  {
-    quote: 'La atención es increíble, siempre escuchan lo que necesitás y te aconsejan lo mejor para vos. Salgo renovada y con una sonrisa.',
-    name: 'Martina L.',
-  },
-  {
-    quote: 'El lugar es hermoso, el equipo súper cálido y profesional. Siempre vuelvo porque sé que mi pelo está en las mejores manos.',
-    name: 'Cami R.',
-  },
-  {
-    quote: 'No sé qué haría sin mi peluquera de confianza. Recomiendo Salzmann con los ojos cerrados, siempre superan mis expectativas.',
-    name: 'Valentina P.',
-  },
-  {
-    quote: 'Me ayudaron a encontrar un cambio de look que realmente siento mío. Se toman el tiempo de escuchar y eso se nota en el resultado.',
-    name: 'Lucía F.',
-  },
+  // [inventada] — reemplazar por reseña real cuando la tengas.
   {
     quote: 'Siempre me voy contenta. El ambiente es relajado, te hacen sentir cómoda y mi pelo queda hermoso.',
     name: 'Carolina B.',
   },
+  // [inventada] — reemplazar por reseña real cuando la tengas.
   {
     quote: 'Fui con muchas dudas y me asesoraron con paciencia. El color quedó natural, brillante y justo como lo imaginaba.',
     name: 'Julieta R.',
-  },
-  {
-    quote: 'Además de trabajar súper bien, tienen una calidez especial. Es mi momento para desconectar y salir renovada.',
-    name: 'Florencia D.',
   },
 ];
 

@@ -7,7 +7,7 @@ const gmailComposeLink = `https://mail.google.com/mail/?view=cm&fs=1&to=${CONTAC
 
 const NAV_LINKS = [
   { label: 'Servicios', href: '/servicios' },
-  { label: 'Trabajos', href: '/#trabajos' },
+  { label: 'Trabajos', href: '/trabajos' },
   { label: 'Contacto', href: '/#contacto' },
 ];
 
