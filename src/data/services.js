@@ -62,7 +62,7 @@ export const SERVICES = [
     title: 'Reflejos',
     description: 'Iluminación y reflejos para darle dimensión y luminosidad al cabello.',
     duration: 'Duración aprox. 3 h',
-    image: '/reflejos.jpeg',
+    image: '/reflejos.png',
     fullDescription:
       'Creamos reflejos personalizados para aportar luz, movimiento y dimensión respetando tu tono natural.',
     steps: [
@@ -95,7 +95,7 @@ export const SERVICES = [
     title: 'Alisados',
     description: 'Tratamientos de alisado para reducir el frizz y facilitar el peinado.',
     duration: 'Duración aprox. 3 a 5 h',
-    image: '/alisado.jpg',
+    image: '/alisado.jpeg',
     fullDescription:
       'Tratamientos pensados para dejar el cabello más liso, manejable y con menos frizz, cuidando la fibra capilar.',
     steps: [
